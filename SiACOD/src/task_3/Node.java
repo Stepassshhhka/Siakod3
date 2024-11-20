@@ -1,10 +1,10 @@
 package task_3;
 
-public class Pair<T, Integer> {
+public class Node<T, Integer> {
     private T key;
     private int value;
 
-    public Pair(T key, int value) {
+    public Node(T key, int value) {
         this.key = key;
         this.value = value;
     }

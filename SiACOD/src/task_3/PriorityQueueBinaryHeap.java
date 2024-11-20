@@ -3,7 +3,7 @@ package task_3;
 import java.util.ArrayList;
 
 public class PriorityQueueBinaryHeap<T> implements PriorityQueue<T> {
-    private ArrayList<Pair<T, Integer>> heap;
+    private ArrayList<Node<T, Integer>> heap;
 
     private int parent(int i) {
         return (i - 1) / 2;
@@ -23,15 +23,15 @@ public class PriorityQueueBinaryHeap<T> implements PriorityQueue<T> {
     }
 
     public void insert(T x, int p) {
-        heap.add(new Pair<>(x, p));
+        heap.add(new Node<>(x, p));
         up(heap.size() - 1);
     }
 
-    public Pair<T, Integer> extractMax() {
+    public Node<T, Integer> extractMax() {
         if (heap.size() == 1) {
             return null;
         }
-        Pair<T, Integer> maxElement = heap.get(1);
+        Node<T, Integer> maxElement = heap.get(1);
         swap(1, heap.size() - 1);
         heap.remove(heap.size() - 1);
         down(1);
@@ -68,7 +68,7 @@ public class PriorityQueueBinaryHeap<T> implements PriorityQueue<T> {
 
 
     private void swap(int i, int j) {
-        Pair<T, Integer> temp = heap.get(i);
+        Node<T, Integer> temp = heap.get(i);
         heap.set(i, heap.get(j));
         heap.set(j, temp);
     }
