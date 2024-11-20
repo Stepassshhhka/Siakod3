@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i < 700; i++) {
+        for (int i = 0; i < 666; i++) {
             PriorityQueue<Integer> HeapQueue0 = new PriorityQueueBinaryHeap<>();
             PriorityQueue<Integer> EarlyQueue0 = new ArrayPriorityQueue<>();
             HeapQueue0.insert(10, 10);
